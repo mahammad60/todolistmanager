@@ -1,0 +1,32 @@
+import os
+my_list = []
+def listmanager():
+  while True:
+   user = input("do you want to view, add, edit, erase or remove an item from the to do list?")
+   if user == "add":
+     items = input("what item do you want to add?")
+     my_list.append(items)
+   old_item = None
+   if user == "view":
+        print(my_list)
+   if not my_list:
+       print("nothing to view or edit")
+   if user == "edit":
+        print(my_list)
+        old_item = input("please choose the item you want to edit")
+   if old_item in my_list:
+           index = my_list.index(old_item)
+           new_item = input("")
+           my_list[index] = new_item
+   if user == "remove":
+        print(my_list)
+        remove_item =  int(input("what item do you want to remove from the to do list"))
+        my_list.remove(remove_item)                         
+   if user == "erase":
+        my_list.clear()
+        print(my_list,"empty.")
+  
+
+
+                           
+listmanager()
